@@ -22,7 +22,7 @@ class Main
 			}
 			else if(n == 2)
 			{
-				// obj.dequeue();
+				obj.dequeue();
 			}
 			else if(n == 3)
 			{
@@ -79,10 +79,16 @@ class Main
 
     void dequeue()
 	{
-		if(front == -1 || front > rear)
+		if(front == -1 || front > rear) // Empty queue
 		{
 			out.println("Underflow");
 		}
+        if(front == rear) // Condition for one element
+        {
+            front = -1;
+            rear = -1;
+            out.println("Value Deleted");
+        }
 		else
 		{
 			front += 1;
