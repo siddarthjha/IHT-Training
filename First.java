@@ -1,4 +1,4 @@
-public class
+public class A
 {
     public static void main(String[] args)
     {
@@ -25,7 +25,7 @@ public class
         }
         System.out.println("Array elements in ascending order:");  
         //accessing element of the array  
-        for (int i = a.length - 1; i <=0; i--)   
+        for (int i = a.length - 1; i >=0; i--)   
         {  
             System.out.println(a[i]);  
         }
