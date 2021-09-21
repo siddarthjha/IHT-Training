@@ -7,6 +7,7 @@ public class A
         System.out.println("All Occurrences of "+5+" are: ");
         allOccurrences(arr,arr.length,5);
   }
+  
   public static int firstOccurrence(int arr[], int n, int target)
   {
     for(int i=0;i<n;i++)
