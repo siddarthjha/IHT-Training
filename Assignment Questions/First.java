@@ -3,7 +3,6 @@ public class A
     public static void main(String[] args)
     {
         int temp;  
-        //initializing an array  
         int a[]={12,5,56,-2,32,2,-26,9,43,94,-78};  
         for (int i = 0; i < a.length; i++)   
         {  
