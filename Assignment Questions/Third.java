@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import static java.lang.System.*;
+
+
 class Main
 {
 	int front = -1, rear = -1;
