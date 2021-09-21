@@ -13,6 +13,7 @@ class Node
 		
 }
 
+
 class A
 {
 	Node head;
