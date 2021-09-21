@@ -1,120 +1,110 @@
-import java.util.Scanner;
-import static java.lang.System.*;
+public class Main {
 
+	int SIZE = 5; // Size of Circular Queue
+	int front, rear;
+	int items[] = new int[SIZE];
 
-class Main
-{
-	int front = -1, rear = -1;
-	int m = 5; // Size
-	int queue[] = new int[m];
-    
-    public static void main(String[] args)
-	{
-		Scanner sc = new Scanner(System.in);
-		Main obj = new Main();
-		while(true)
-		{
-			out.println("1. Insert\n2. Delete\n3. Display\n4. EXIT");
-			int n = sc.nextInt();
-			if(n == 1)
-			{
-				out.println("Enter value");
-				int val = sc.nextInt();
-				obj.enqueue(val);
-			}
-			else if(n == 2)
-			{
-				obj.dequeue();
-			}
-			else if(n == 3)
-			{
-				obj.display();
-			}
-			else
-			{
-				out.println("EXIT");
-				break;
-			}
-		}
-	}
-    
-    void enqueue(int data)
-	{
-		if(front ==0 && rear == m-1 || (rear == (front - 1) % (m - 1)))
-		{
-			out.println("Overflow"); //Queue is full
-			return;
-		}
-		else if(front == -1 && rear == -1) // Empty Queue
-		{
-			front = 0;
-			rear = 0;
-            queue[rear] = data;
-		    out.println("Value Inserted");
-		}
-		else if (rear == m - 1 && front != 0)
-		{
-			rear = 0;
-            
-		}
-        else
-        {
-            rear = (rear + 1);
-        
-            // Adding a new element if
-            if(front <= rear)
-            {
-                queue[rear] = data;
-		        out.println("Value Inserted");
-            }
-        
-            // Else updating old value
-            else
-            {
-                queue[rear] = data;
-		        out.println("Value Inserted");
-            }
-            
-        }
-		
-	} 
-
-    void dequeue()
-	{
-		if(front == -1 || front > rear) // Empty queue
-		{
-			out.println("Underflow");
-		}
-        if(front == rear) // Condition for one element
-        {
-            front = -1;
-            rear = -1;
-            out.println("Value Deleted");
-        }
-		else
-		{
-			front += 1;
-			out.println("Value Deleted");
-		}
+	Main() {
+		front = -1;
+		rear = -1;
 	}
 
-    void display()
-	{
-		
-		if(front == -1)
-		{
-			out.println("Empty Queue");
-			return;
-		}
-		else
-		{
-			out.println("Queue Elements displayed");
-			for(int i = front; i <= rear; i++)
-			{
-				out.print(queue[i] + ", ");
-			}
-			out.println();
-		}
-	}
 	
+	boolean isFull() {
+		if (front == 0 && rear == SIZE - 1) {
+		return true;
+		}
+		if (front == rear + 1) {
+		return true;
+		}
+		return false;
+	}
+
+	boolean isEmpty() {
+		if (front == -1)
+		return true;
+		else
+		return false;
+	}
+
+	// Adding an element
+	void enQueue(int element) {
+		if (isFull()) {
+		System.out.println("Queue is full");
+		} else {
+		if (front == -1)
+			front = 0;
+		rear = (rear + 1) % SIZE;
+		items[rear] = element;
+		System.out.println("Inserted " + element);
+		}
+	}
+
+	// Removing an element
+	int deQueue() {
+		int element;
+		if (isEmpty()) {
+		System.out.println("Queue is empty");
+		return (-1);
+		} else {
+		element = items[front];
+		if (front == rear) {
+			front = -1;
+			rear = -1;
+		} /* Q has only one element, so we reset the queue after deleting it. */
+		else {
+			front = (front + 1) % SIZE;
+		}
+		return (element);
+		}
+	}
+
+	void display() {
+		/* Function to display status of Circular Queue */
+		int i;
+		if (isEmpty()) {
+		System.out.println("Empty Queue");
+		} else {
+		System.out.println("Front -> " + front);
+		System.out.println("Items -> ");
+		for (i = front; i != rear; i = (i + 1) % SIZE)
+			System.out.print(items[i] + " ");
+		System.out.println(items[i]);
+		System.out.println("Rear -> " + rear);
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Main q = new Main();
+
+		// Fails because front = -1
+		q.deQueue();
+
+		q.enQueue(1);
+		q.enQueue(2);
+		q.enQueue(3);
+		q.enQueue(4);
+		q.enQueue(5);
+
+		// Fails to enqueue because front == 0 && rear == SIZE - 1
+		q.enQueue(6);
+
+		q.display();
+
+		int elem = q.deQueue();
+
+		if (elem != -1) {
+		System.out.println("Deleted Element is " + elem);
+		}
+		q.display();
+
+		q.enQueue(7);
+
+		q.display();
+
+		// Fails to enqueue because front == rear + 1
+		q.enQueue(8);
+	}
+
 }
