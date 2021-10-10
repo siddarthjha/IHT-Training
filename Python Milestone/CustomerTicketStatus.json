@@ -1,0 +1,76 @@
+{
+    "ticket_details": [
+        {
+            "CustomerName": "Siddarth",
+            "ticketNumber": "234567",
+            "product": "Clothes",
+            "issueHead": "Delayed Shipping",
+            "message": "My Order hasn't arrived from last 5 days",
+            "status": "Pending"
+        },
+        {
+            "CustomerName": "Anand",
+            "ticketNumber": "234568",
+            "product": "Laptop",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Screen is broken",
+            "status": "Pending"
+        },
+        {
+            "CustomerName": "Rajiv",
+            "ticketNumber": "234569",
+            "product": "Refrigrator",
+            "issueHead": "Delayed Shipping",
+            "message": "My Order hasn't arrived from last 15 days",
+            "status": "Pending"
+        },
+        {
+            "CustomerName": "Archana",
+            "ticketNumber": "234570",
+            "product": "Battery Bank",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Port is broken",
+            "status": "Pending"
+        },
+        {
+            "CustomerName": "Ruby",
+            "ticketNumber": "234571",
+            "product": "Battery Bank",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Port is broken",
+            "status": "Pending"
+        },
+        {
+            "CustomerName": "Dhruv",
+            "ticketNumber": "234572",
+            "product": "Water Tank",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Lid is broken",
+            "status": "Resolved"
+        },
+        {
+            "CustomerName": "Niva",
+            "ticketNumber": "234573",
+            "product": "Travel Bag",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Chain is broken",
+            "status": "Resolved"
+        },
+        {
+            "CustomerName": "Prabhas",
+            "ticketNumber": "234574",
+            "product": "Biscuit",
+            "issueHead": "Damaged Product Delivered",
+            "message": "Packet is torn",
+            "status": "Resolved"
+        },
+        {
+            "CustomerName": "Jha",
+            "ticketNumber": "234575",
+            "product": "Iphonw",
+            "issueHead": "Delayed Shipping",
+            "message": "The delivery is due of it's expected date. Please help!!!",
+            "status": "Pending"
+        }
+    ]
+}
